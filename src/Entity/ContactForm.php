@@ -37,6 +37,11 @@ class ContactForm
      */
     private $message;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $privacyPolicy;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class ContactForm
     public function setMessage(string $message): self
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    public function getPrivacyPolicy(): ?bool
+    {
+        return $this->privacyPolicy;
+    }
+
+    public function setPrivacyPolicy(bool $privacyPolicy): self
+    {
+        $this->privacyPolicy = $privacyPolicy;
 
         return $this;
     }
